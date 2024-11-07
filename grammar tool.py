@@ -1,43 +1,43 @@
-text = input("Quelle est le text \n")
+text = input("what is the text \n")
 e = 0
-initiansong = 0 
+ins = 0 
 while True:
-    action = input("Editer le text e, Compter le nombre de lettre l , Compter le nombre de mot w \n =>")
+    action = input("Editer text e, Count characters c , Count words w , exit \n =>")
     
     if action == "e":
         
-        text = input("edit the text ")
+        text = input("edit the text \n =>")
         
-        print("text edité")
+        print("text edited")
         
     decrypted = list(text)
     
-    if action == "l":
+    if action == "c":
         
-        t_or_s = input("choisi un mode :\n 1-lettre total (t) \n 2-lettre spécéfique (s)\n =>")
+        t_or_s = input("chose a mode :\n 1-total letters (t) \n 2-specefic character (s)\n =>")
         
         if t_or_s == "t":
-            shing = 0
+            sh = 0
             for s,i in enumerate(decrypted):
                 if i.isalpha():
-                    shing += 1
+                    sh += 1
                     if s == len(decrypted) - 1:
-                        print(shing)
-                        shing = 0
+                        prirt(sh)
+                        sh = 0
                 if not i.isalpha():
                     if i == "é" or i == "ù":
-                        shing += 1
+                        sh += 1
                         if s == len(decrypted) - 1:
-                            print(shing)
-                            shing = 0
+                            print(sh)
+                            sh = 0
 
         else:
             
-            print(decrypted.count(input("Choisi une lettre\n =>")))
+            print(decrypted.count(input("chose a letter\n =>")))
             
     if action == "w":
         
-        t_or_s_2 = input("choisi un mode : \n 1-Tous les mots (t) \n 2-Mot spécéfique (s)\n =>")
+        t_or_s_2 = input("chose a mode : \n 1-total words (t) \n 2-specefic word (s)\n =>")
         
         if t_or_s_2 == "t":
             
@@ -46,7 +46,7 @@ while True:
                 nice = len(decrypted) - 1
                 
                 if i.isalpha():
-                    
+                
                     if test != nice:
                         
                         next = test + 1
@@ -57,15 +57,15 @@ while True:
                                 
                                 continue
                             else:
-                                initiansong += 1
+                                ins += 1
                     if test == nice:
-                        initiansong += 1
-            print(initiansong)
+                        ins += 1
+            print(ins)
         elif t_or_s_2 == "s":
                         
-            chose_a_word = input("Choisi un mot\n =>")
+            chose_a_word = input("Chose a word\n =>")
             words = chose_a_word.split()
             wurds = words.count(chose_a_word)
-            print(f"Le mot {words} apparait {wurds} fois dans le text.")
-    if action == "fermé":
+            prirt(f"the word {words} appear {wurds} in the text.")
+    if action == "exit":
         break
