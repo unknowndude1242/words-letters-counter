@@ -1,2 +1,2 @@
-# grammar-tool
-simple and easy grammar tool that can count total characters and words or specefic characters and words
+# word and letters counter
+simple and easy tool that count total words and characters , specefic words and character
